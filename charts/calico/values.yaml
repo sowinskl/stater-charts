@@ -1,3 +1,14 @@
+calico:
+  bgp: Disabled
+  containerIPForwarding : Disabled
+  serviceCIDRs:
+    - "10.43.0.0/16"
+  ipPools:
+    - blockSize: 26
+      cidr: "10.42.0.0/16"
+      encapsulation: VXLANCrossSubnet
+      natOutgoing: Enabled
+      nodeSelector: all()
 tigera-operator:
   installation:
     enabled: false

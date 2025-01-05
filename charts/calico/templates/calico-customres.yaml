@@ -1,0 +1,29 @@
+---
+apiVersion: operator.tigera.io/v1
+kind: Installation
+metadata:
+  name: default
+spec:
+  calicoNetwork:
+    bgp: {{ .Values.calico.bgp | quote }}
+    containerIPForwarding: {{ .Values.calico.containerIPForwarding | quote }}
+    serviceCIDRs:
+{{- if .Values.calico.serviceCIDRs }}
+      {{- toYaml .Values.calico.serviceCIDRs | nindent 6 }}
+{{- end }}
+    ipPools:
+{{- if .Values.calico.ipPools }}
+{{- range .Values.calico.ipPools }}
+      - blockSize: {{ .blockSize }}
+        cidr: {{ .cidr | quote }}
+        encapsulation: {{ .encapsulation | quote }}
+        natOutgoing: {{ .natOutgoing | quote }}
+        nodeSelector: {{ .nodeSelector | quote }}
+{{- end }}
+
+---
+apiVersion: operator.tigera.io/v1
+kind: APIServer
+metadata:
+  name: default
+spec: {}
