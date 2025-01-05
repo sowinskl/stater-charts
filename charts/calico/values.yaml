@@ -1,6 +1,6 @@
 calico:
   bgp: Disabled
-  containerIPForwarding : Disabled
+  containerIPForwarding : Enabled
   serviceCIDRs:
     - "10.43.0.0/16"
   ipPools:
