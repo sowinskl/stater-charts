@@ -20,7 +20,7 @@ spec:
         natOutgoing: {{ .natOutgoing | quote }}
         nodeSelector: {{ .nodeSelector | quote }}
 {{- end }}
-
+{{- end }}
 ---
 apiVersion: operator.tigera.io/v1
 kind: APIServer
