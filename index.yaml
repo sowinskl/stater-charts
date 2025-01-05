@@ -2,6 +2,18 @@ apiVersion: v1
 entries:
   calico:
   - apiVersion: v2
+    created: "2025-01-05T22:29:18.138018244Z"
+    dependencies:
+    - name: tigera-operator
+      repository: https://docs.projectcalico.org/charts/
+      version: 3.29.*
+    digest: 0fcd59cca719823891a224b877d5a71a7cb9ee282738809e85c05fc56d168ee9
+    name: calico
+    type: application
+    urls:
+    - https://github.com/sowinskl/stater-charts/releases/download/calico-0.2.0/calico-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2025-01-05T02:08:09.508306991Z"
     dependencies:
     - name: tigera-operator
@@ -13,4 +25,4 @@ entries:
     urls:
     - https://github.com/sowinskl/Stater-helm-charts/releases/download/calico-0.1.0/calico-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-05T02:08:09.509230582Z"
+generated: "2025-01-05T22:29:18.138095455Z"
